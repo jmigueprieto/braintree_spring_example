@@ -40,3 +40,4 @@ wrapper {
 task stage (
   dependsOn: ['compileJava', 'processResources', 'classes', 'findMainClass', 'jar', 'bootRepackage', 'assemble']
 )
+
