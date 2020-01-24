@@ -1,4 +1,4 @@
-package springexample;
+package springexample.integration;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -19,6 +19,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import springexample.BraintreeGatewayFactory;
 
 public class BraintreeGatewayFactoryTest {
     private static File mockConfigFile;

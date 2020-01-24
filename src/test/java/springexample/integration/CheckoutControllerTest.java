@@ -1,4 +1,4 @@
-package springexample;
+package springexample.integration;
 
 import java.math.BigDecimal;
 
@@ -26,6 +26,8 @@ import com.braintreegateway.BraintreeGateway;
 import com.braintreegateway.Result;
 import com.braintreegateway.Transaction;
 import com.braintreegateway.TransactionRequest;
+import springexample.Application;
+import springexample.BraintreeGatewayFactory;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
