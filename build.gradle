@@ -11,9 +11,11 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
+
+archivesBaseName = 'bt-example'
 
 jar {
-    baseName = 'bt-example'
     version =  '0.1.0'
 }
 
@@ -33,11 +35,24 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE")
 }
 
-wrapper {
-    gradleVersion = '6.1'
-}
-
 task stage (
   dependsOn: ['compileJava', 'processResources', 'classes', 'findMainClass', 'jar', 'bootRepackage', 'assemble']
 )
+
+wrapper {
+    gradleVersion = '5.6.4'
+}
+
+test {
+    if (System.properties['test.profile'] == 'integration') {
+        include '/springexample/integration/**'
+    } else {
+        exclude '/springexample/integration/**'
+    }
+}
+
+application {
+    mainClassName = 'springexample.Application'
+}
+
 
